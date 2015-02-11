@@ -1,0 +1,19 @@
+{
+  "name": "dream-team",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/steelcat/dream-team",
+  "author": "steelcat",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steelcat/dream-team"
+  },
+  "bugs": {
+    "url": "https://github.com/steelcat/dream-team"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jade": "^0.11.0",
+    "gulp-sass": "~1.2.4"
+  }
+}
