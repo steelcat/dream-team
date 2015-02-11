@@ -1,0 +1,23 @@
+{
+  "name": "dream-team",
+  "version": "0.0.0",
+  "homepage": "https://github.com/steelcat/dream-team",
+  "authors": [
+    "steelcat <me@steelcat.org>"
+  ],
+  "description": "dream-team",
+  "keywords": [
+    "loftblog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.3"
+  }
+}
