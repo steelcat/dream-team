@@ -13,10 +13,16 @@ gulp.task('jade', function() {
 
 // Компилируем SCSS
 gulp.task('sass', function() {
-	return gulp.src(['app/style.scss'])
+	return gulp.src(['app/scss/style.scss'])
 		.pipe(sass())
 		.on('error', function(err){ console.log(err.message); })
 		.pipe(gulp.dest('public/css'));
+});
+
+// Копируем шрифты
+gulp.task('fonts', function () {
+	return gulp.src('app/fonts/*')
+		.pipe(gulp.dest('public/fonts'));
 });
 
 // Копируем изображения
@@ -32,4 +38,4 @@ gulp.task('watch', function() {
 });
 
 // Задача по-умолчанию
-gulp.task('default', ['jade', 'sass', 'img', 'watch']);
+gulp.task('default', ['jade', 'sass', 'fonts', 'img', 'watch']);
