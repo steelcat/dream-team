@@ -14,6 +14,6 @@
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-jade": "^0.11.0",
-    "gulp-sass": "~1.2.4"
+    "gulp-sass": "^1.2.4"
   }
 }
