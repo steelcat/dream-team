@@ -1,3 +1,13 @@
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+.block-place__title{
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
 .block-place__control__buttonset{
 	width: 102px;
 	height: 102px;
