@@ -1,4 +1,12 @@
-.block__upload {
+.block-upload {
   font: 14px/14px roboto_ltregular;
   color: #2e3641;
+}
+.block-upload__input {
+  width: 194px;
+  height: 27px;
+  border: 1px solid #9EB2C0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
