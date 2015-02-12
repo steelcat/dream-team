@@ -3,9 +3,8 @@
 	$('.file-upload').fileupload({
 		dataType: 'json',
 		done: function (e, data) {
-			$.each(data.result.files, function (index, file) {
-				$('.file-upload-imitation').text(file.name).appendTo('.file-name');
-			});
+			$('.file-upload-imitation').text(data.files[0].name);
+			console.log(data.files);
 		}
 	});
 })(jQuery);
