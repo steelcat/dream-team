@@ -1,0 +1,87 @@
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+.block-place__title{
+	margin-bottom: 35px;
+	font-size: 16px;
+}
+
+.block-place__control__buttonset{
+	width: 102px;
+	height: 102px;
+	border: 1px #9eb2c0 solid;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	float: left;
+}
+
+.block-place__control__buttonset-item{
+	display: block;
+	width: 34px;
+	height: 34px;
+	background-color: #dbe1e8;
+	float: left;
+	border: 1px #9eb2c0 solid;
+	margin: -1px;
+}
+
+.block-place__control__buttonset-item:hover{
+	background-color: #f97e76;
+}
+
+.block-place__control__spinners{
+	float: right;
+	margin-left: 32px;
+}
+
+.block-place__control__spinners-item{
+	margin-bottom: 10px;
+}
+
+.axis-label{
+	font-size: 16px;
+}
+
+.ui-spinner-input{
+	width: 45px;
+	height: 45px;
+	border: 1px #9eb2c0 solid;
+	background-color: #f1f1f5;
+	border-radius: 3px;
+	font-size: 24px;
+	text-align: center;
+	color: #444a53; 
+}
+
+.ui-spinner{
+	border: 0px;
+	margin-top: -4px;
+}
+
+.ui-custom-add-up{
+	 background-image: url("../img/arrow-up.png")  !important;
+	 background-repeat:no-repeat;
+}
+
+.ui-custom-add-down{
+	 background-image: url("../img/arrow-down.png")  !important;
+	 background-repeat:no-repeat;
+}
+
+.ui-widget-content{	
+	background-color: #f1f1f5;
+	background-image: none;
+}
+
+.ui-state-default{
+	border: 0!important;
+	background:  #f1f1f5 !important;
+}
+
+.ui-icon{
+	margin-top: -5px !important;
+	border: 0 !important;
+}
