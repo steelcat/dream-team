@@ -1,0 +1,89 @@
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+.block-place__title{
+	margin-bottom: 35px;
+	font-size: 16px;
+}
+
+.block-place__control__buttonset{
+	width: 102px;
+	height: 102px;
+	border: 1px #9eb2c0 solid;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	float: left;
+}
+
+.block-place__control__buttonset-item{
+	display: block;
+	width: 34px;
+	height: 34px;
+	background-color: #dbe1e8;
+	float: left;
+	border: 1px #9eb2c0 solid;
+	margin: -1px;
+}
+
+.block-place__control__buttonset-item:hover{
+	background-color: #f97e76;
+}
+
+.block-place__control__spinners{
+	float: left;
+}
+
+.block-place__control__spinners-item{
+	margin-bottom: 10px;
+}
+
+.axis-label{
+	font-size: 16px;
+	height: 45px;
+	float: left;
+	vertical-align: middle;
+	margin-left: 30px;
+	line-height: 45px;
+}
+
+.block-place__control__spinners-item-txt{
+	width: 45px;
+	height: 45px;
+	border: 1px #9eb2c0 solid;
+	background-color: #f1f1f5;
+	border-radius: 3px;
+	font-size: 24px;
+	text-align: center;
+	color: #444a53; 
+	float: left;
+	margin-left: 10px; 
+}
+
+.block-place__control__spinners-item-buttons{
+	display: inline-block;
+	position: relative;
+	height: 45px;
+	float: left;
+	margin-left: 6px;
+}
+
+.up-button{
+	 background-image: url("../img/arrow-up.png");
+	 display: block;
+	 width: 13px;
+	 height: 8px;
+	 position: absolute;
+	 top: 5px;
+}
+
+.down-button{
+	 background-image: url("../img/arrow-down.png");	 
+	 display: block;
+	 width: 13px;
+	 height: 8px;
+	 position: absolute;
+	 top: 35px;
+}

@@ -1,2 +1,27 @@
 mixin block-place
 	.block-place
+		h2.block-place__title Положение
+		.block-place__control
+			div(class="block-place__control__buttonset cf")
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+				.block-place__control__buttonset-item
+			.block-place__control__spinners
+				form(class="block-place__control__spinners-item cf")
+					label(for="spinner-axis-x" class="axis-label") X
+					input(type="text" class="block-place__control__spinners-item-txt" name="x-value")
+					div(class="block-place__control__spinners-item-buttons")
+						.up-button
+						.down-button
+				form(class="block-place__control__spinners-item")
+					label(for="axis-x" class="axis-label") Y
+					input(type="text" class="block-place__control__spinners-item-txt" name="y-value")
+					div(class="block-place__control__spinners-item-buttons")
+						.up-button
+						.down-button
