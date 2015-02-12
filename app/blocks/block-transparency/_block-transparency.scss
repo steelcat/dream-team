@@ -1,15 +1,38 @@
+.block-transparency{
+  overflow: hidden;
+  clear: both;
+}
 .block-transparency__title{
+  font-family: 'roboto_ltregular';
+  text-align: left;
   font-size: 14px;
   color: #2e3641;
+  margin: 0 0 20px 20px;
 }
 .block-transparency__slider{
-  clear: both;
+  position: relative;
   overflow: hidden;
-  width: 218px;
-  margin: 0 auto;
+  padding: 5px 0 11px;
+  margin-bottom: 20px;
 }
 .block-transparency__slider__line{
-  width: 218px;
+  margin: 5px auto 0;
   height: 3px;
-  background: #9eb2c0;
+  width: 218px;
+  background-color: #9eb2c0;
+  background-size: 50% 9px;
+}
+
+.block-transparency__slider__round {
+  position:absolute;
+  background: url("../img/thumb.png");
+  height: 24px;
+  width: 24px;
+  left: 120px;
+  top: 0px;
+  cursor: move;
+  opacity: 0.9;
+}
+.block-transparency__slider__round:hover{
+ opacity: 1;
 }
