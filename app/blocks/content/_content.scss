@@ -1,6 +1,12 @@
 .content {
+  position: relative;
   opacity: 0.64;
   width: 702px;
   height: 670px;
   background-color: #2E3641;
+}
+.content__title {
+  color: #ffffff;
+  padding-left: 25px;
+  font: 36px/56px roboto_ltregular;
 }
