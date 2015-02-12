@@ -33,8 +33,7 @@
 }
 
 .block-place__control__spinners{
-	float: right;
-	margin-left: 32px;
+	float: left;
 }
 
 .block-place__control__spinners-item{
@@ -43,9 +42,14 @@
 
 .axis-label{
 	font-size: 16px;
+	height: 45px;
+	float: left;
+	vertical-align: middle;
+	margin-left: 30px;
+	line-height: 45px;
 }
 
-.ui-spinner-input{
+.block-place__control__spinners-item-txt{
 	width: 45px;
 	height: 45px;
 	border: 1px #9eb2c0 solid;
@@ -54,34 +58,32 @@
 	font-size: 24px;
 	text-align: center;
 	color: #444a53; 
+	float: left;
+	margin-left: 10px; 
 }
 
-.ui-spinner{
-	border: 0px;
-	margin-top: -4px;
+.block-place__control__spinners-item-buttons{
+	display: inline-block;
+	position: relative;
+	height: 45px;
+	float: left;
+	margin-left: 6px;
 }
 
-.ui-custom-add-up{
-	 background-image: url("../img/arrow-up.png")  !important;
-	 background-repeat:no-repeat;
+.up-button{
+	 background-image: url("../img/arrow-up.png");
+	 display: block;
+	 width: 13px;
+	 height: 8px;
+	 position: absolute;
+	 top: 5px;
 }
 
-.ui-custom-add-down{
-	 background-image: url("../img/arrow-down.png")  !important;
-	 background-repeat:no-repeat;
-}
-
-.ui-widget-content{	
-	background-color: #f1f1f5;
-	background-image: none;
-}
-
-.ui-state-default{
-	border: 0!important;
-	background:  #f1f1f5 !important;
-}
-
-.ui-icon{
-	margin-top: -5px !important;
-	border: 0 !important;
+.down-button{
+	 background-image: url("../img/arrow-down.png");	 
+	 display: block;
+	 width: 13px;
+	 height: 8px;
+	 position: absolute;
+	 top: 35px;
 }
