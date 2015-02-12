@@ -1,6 +1,8 @@
 mixin block-upload
 	.block-upload
 		.block-upload__image-title Исходное изображение
-			.input
+			| <!-- Блок имитирующий нативный input -->
+			div.file-upload-imitation image.jpg
+			input(class="input file-upload" type="file" name="files[]" data-url="uploaded-images/full-size/")
 		.block-ulpoad__watermark-title Водяной знак
-			.input
+			input.input
