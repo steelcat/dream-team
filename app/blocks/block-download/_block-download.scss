@@ -1,0 +1,30 @@
+.block-download{
+  position: relative;
+  overflow: hidden;
+  clear: both;
+}
+.block-download__button{
+  display: block;
+  float: left;
+  background: #37e294;
+  width: 99px;
+  height: 42px;
+  border: none;
+  border-radius: 3px;
+  color: #f1f1f5;
+  font-size: 18px;
+  font-family: 'roboto_medium';
+  cursor: pointer;
+}
+.block-download__button:first-child{
+  margin: 55px 40px 25px 11px;
+}
+.block-download__button:last-child{
+  margin: 55px 11px 25px 0;
+}
+.block-download__button-reset{
+  background: #c1cfd9;
+}
+.block-download__button-submit{
+  background: #f97e76;
+}
