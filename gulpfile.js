@@ -1,6 +1,14 @@
+var del = require('del');
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
+
+// Удаляем папку bower_components
+gulp.task('clean:bower', function (cb) {
+	del([
+		'bower_components'
+	], cb);
+});
 
 // Компилируем JADE
 gulp.task('jade', function() {
