@@ -45,5 +45,11 @@ gulp.task('watch', function() {
 	gulp.watch('app/**/*.jade', ['jade']);
 });
 
+// Копируем PHP для jQuery-File-Upload
+gulp.task('php-file-upload', function () {
+	return gulp.src('app/php/file-upload/*')
+		.pipe(gulp.dest('public/uploaded-images'));
+});
+
 // Задача по-умолчанию
-gulp.task('default', ['jade', 'sass', 'fonts', 'img', 'watch']);
+gulp.task('default', ['jade', 'sass', 'fonts', 'img', 'watch', 'php-file-upload']);
