@@ -17,10 +17,14 @@
   right: 0px;
   top: 0px;
   width: 39px;
-  height: 27px;
+  height: 29px;
   background: url(../img/upload-icon.png) no-repeat center #F97E76;
+  z-index: 20;
 }
 .block-upload__input {
+  position: absolute;
+  right: 0px;
+  top: 0px;
   color: #9eb2c0;
   font: 12px/27px segoe_uil;
   width: 194px;
@@ -30,4 +34,5 @@
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  z-index: 10;
 }
