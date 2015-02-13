@@ -1,6 +1,14 @@
 mixin block-upload
 	.block-upload
 		.block-upload__image-title Исходное изображение
-			.input
+			
+		.block-upload_image-file(value="Image.png")
+			.upload-button
+				input(type="file",accept="image/*")
+	
+
 		.block-ulpoad__watermark-title Водяной знак
-			.input
+		.block-upload_image-file
+				.upload-button
+				input(type="file",accept="image/*")
+

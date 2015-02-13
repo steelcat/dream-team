@@ -16,5 +16,8 @@
     "gulp-jade": "^0.11.0",
     "gulp-sass": "^1.2.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-jade": "^0.11.0",
+    "gulp-sass": "^1.3.2"
+  }
 }

@@ -1,0 +1,55 @@
+.block-ulpoad__watermark-title, .block-upload__image-title {
+
+	font-family: roboto_condensedlight;
+	color:  #2e3641;
+	font-size: 14px; 
+	font-weight: 300;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.upload-button {
+    position: absolute;
+	width: 39px;
+	height: 26px;
+	border-radius: 2px;
+	background-image: url("../img/upload-icon.png"), url("../img/rounded-rectangle.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 5px top 2px, 0px;
+	cursor:pointer;
+	right: -.1em;
+	top: -.1em;
+	font-family: roboto_condensedlight;
+	color:  #9eb2c0;
+	font-size: 12px;
+	font-weight: 300;
+	text-align: left;
+ }
+
+ .upload-button input:hover {
+ 	cursor:pointer;
+ }
+
+ .block-upload_image-file {
+ 	background-color:  #f1f1f5;
+	border-radius: 3px;
+	border-width: 1px;
+	border-color:  #9eb2c0;
+	border-style: solid;
+	width: 192px;
+	height: 25px;
+	display:block;
+	margin-bottom: 20px;
+	position:relative;
+ }
+
+input[type="file"] {
+	position:relative; 
+	opacity:0; 
+	z-index:99;
+	width: inherit;
+	height:inherit;
+	cursor:pointer;
+}
+
+
