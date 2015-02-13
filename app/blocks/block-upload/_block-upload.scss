@@ -1,0 +1,39 @@
+.block-upload {
+
+}
+.block-upload__title {
+  font: 14px/14px roboto_ltregular;
+  color: #2e3641;
+  margin-bottom: 8px;
+}
+.block-upload_input-container {
+  position: relative;
+  margin-bottom: 26px;
+  height: 27px;
+  width: 194px;
+}
+.block-upload__button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 39px;
+  height: 27px;
+  background: url(../img/upload-icon.png) no-repeat center #F97E76;
+  @include border-right-radius(3px);
+  z-index: 20;
+}
+.block-upload__input {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: #9eb2c0;
+  font: 12px/27px segoe_uil;
+  width: 194px;
+  height: 27px;
+  padding: 0;
+  border: 1px solid #9EB2C0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  z-index: 10;
+}
