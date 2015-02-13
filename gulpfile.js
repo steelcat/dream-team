@@ -37,6 +37,12 @@ gulp.task('sass', function() {
 		.pipe(gulp.dest('public/css'));
 });
 
+// Копируем JS
+gulp.task('js', ['bower:copy-js'], function() {
+	return gulp.src(['app/js/**/*'])
+		.pipe(gulp.dest('public/js'));
+});
+
 // Копируем шрифты
 gulp.task('fonts', function () {
 	return gulp.src('app/fonts/*')
@@ -62,4 +68,4 @@ gulp.task('watch', function() {
 });
 
 // Задача по-умолчанию
-gulp.task('default', ['bower:copy-js', 'jade', 'sass', 'fonts', 'img', 'php', 'watch']);
+gulp.task('default', ['jade', 'sass', 'js', 'fonts', 'img', 'php', 'watch']);
