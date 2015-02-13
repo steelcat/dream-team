@@ -14,8 +14,10 @@
   "devDependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.10",
+    "gulp-filter": "^2.0.1",
     "gulp-jade": "^0.11.0",
-    "gulp-sass": "^1.2.4"
+    "gulp-sass": "^1.2.4",
+    "main-bower-files": "^2.5.0"
   },
   "dependencies": {}
 }

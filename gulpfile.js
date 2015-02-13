@@ -1,5 +1,7 @@
 var del = require('del');
 var gulp = require('gulp');
+var mainBowerFiles = require('main-bower-files');
+var gulpFilter = require('gulp-filter');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 
@@ -8,6 +10,14 @@ gulp.task('clean:bower', function (cb) {
 	del([
 		'bower_components'
 	], cb);
+});
+
+// Копируем JavaScript библиотеки
+gulp.task('bower:copy-js', function() {
+	var jsFilter = gulpFilter('**/*.js');
+	return gulp.src(mainBowerFiles(/* options */), { base: 'bower_components' })
+		.pipe(jsFilter)
+		.pipe(gulp.dest('app/js/vendor'))
 });
 
 // Компилируем JADE
@@ -46,4 +56,4 @@ gulp.task('watch', function() {
 });
 
 // Задача по-умолчанию
-gulp.task('default', ['jade', 'sass', 'fonts', 'img', 'watch']);
+gulp.task('default', ['bower:copy-js', 'jade', 'sass', 'fonts', 'img', 'watch']);
