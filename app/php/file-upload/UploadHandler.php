@@ -44,8 +44,8 @@ class UploadHandler
         $this->response = array();
         $this->options = array(
             'script_url' => $this->get_full_url().'/',
-            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/full-size/',
-            'upload_url' => $this->get_full_url().'/full-size/',
+            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/main-image/',
+            'upload_url' => $this->get_full_url().'/main-image/',
             'user_dirs' => false,
             'mkdir_mode' => 0755,
             'param_name' => 'files',
