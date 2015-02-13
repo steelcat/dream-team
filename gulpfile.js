@@ -49,6 +49,12 @@ gulp.task('img', function () {
 		.pipe(gulp.dest('public/img'));
 });
 
+// Копируем директорию PHP-скриптов
+gulp.task('php', function () {
+	return gulp.src('app/php/**/*')
+		.pipe(gulp.dest('public/php'));
+});
+
 // Наблюдаем за изменениями файлов
 gulp.task('watch', function() {
 	gulp.watch('app/**/*.scss', ['sass']);
@@ -56,4 +62,4 @@ gulp.task('watch', function() {
 });
 
 // Задача по-умолчанию
-gulp.task('default', ['bower:copy-js', 'jade', 'sass', 'fonts', 'img', 'watch']);
+gulp.task('default', ['bower:copy-js', 'jade', 'sass', 'fonts', 'img', 'php', 'watch']);
