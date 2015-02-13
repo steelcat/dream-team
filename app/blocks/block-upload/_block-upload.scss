@@ -1,5 +1,7 @@
 .block-upload {
-
+  height: 173px;
+  padding-top: 30px;
+  padding-left: 19px;
 }
 .block-upload__title {
   font: 14px/14px roboto_ltregular;
@@ -10,7 +12,7 @@
   position: relative;
   margin-bottom: 26px;
   height: 27px;
-  width: 194px;
+  width: 220px;
 }
 .block-upload__button {
   position: absolute;
@@ -28,7 +30,7 @@
   top: 0px;
   color: #9eb2c0;
   font: 12px/27px segoe_uil;
-  width: 194px;
+  width: 220px;
   height: 27px;
   padding: 0;
   border: 1px solid #9EB2C0;
