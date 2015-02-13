@@ -13,11 +13,19 @@ gulp.task('clean:bower', function (cb) {
 });
 
 // Копируем JavaScript библиотеки
-gulp.task('bower:copy-js', function() {
+gulp.task('bower:copy-js', ['bower:copy-jquery-ui'], function() {
 	var jsFilter = gulpFilter('**/*.js');
 	return gulp.src(mainBowerFiles(/* options */), { base: 'bower_components' })
 		.pipe(jsFilter)
 		.pipe(gulp.dest('app/js/vendor'))
+});
+
+// Копируем библиотеку JQueryUI
+gulp.task('bower:copy-jquery-ui', function() {
+	var jsFilter = gulpFilter('**/*.js');
+	return gulp.src(['bower_components/jquery.ui/ui/**/*'])
+		.pipe(jsFilter)
+		.pipe(gulp.dest('app/js/vendor/jquery.ui'));
 });
 
 // Компилируем JADE
