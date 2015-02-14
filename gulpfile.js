@@ -63,6 +63,12 @@ gulp.task('img', function () {
 		.pipe(gulp.dest('public/img'));
 });
 
+// Копируем папку files
+gulp.task('files', function () {
+	return gulp.src('app/files/*')
+		.pipe(gulp.dest('public/files'));
+});
+
 // Копируем директорию PHP-скриптов
 gulp.task('php', function () {
 	return gulp.src('app/php/**/*')
@@ -76,4 +82,4 @@ gulp.task('watch', function() {
 });
 
 // Задача по-умолчанию
-gulp.task('default', ['jade', 'sass', 'js', 'fonts', 'img', 'php', 'watch']);
+gulp.task('default', ['jade', 'sass', 'js', 'fonts', 'img', 'files', 'php', 'watch']);

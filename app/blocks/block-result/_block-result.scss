@@ -7,3 +7,22 @@
   height: 534px;
   background: #ffffff;
 }
+.block-result__container {
+  position: relative;
+}
+.block-result__watermark {
+  position: absolute;
+  width: 651px;
+  height: 534px;
+  background: url(../files/watermark.gif) no-repeat top left;
+  opacity: 0.6;
+  z-index: 20;
+}
+.block-result__original {
+  position: absolute;
+  width: 651px;
+  height: 534px;
+  background: url(../files/original.gif) no-repeat center center;
+  opacity: 1;
+  z-index: 10;
+}
