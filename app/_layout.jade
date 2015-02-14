@@ -1,18 +1,19 @@
 include blocks/_blocks
 doctype html
 html(lang="ru")
-    head
-        meta(charset='utf-8')
-        link(href='css/style.css' rel='stylesheet')
-    +page
-        +wrapper
-            +content
-                +block-result
-            +sidebar
-                +block-upload
-                +block-place
-                +block-transparency
-                +block-download
-        +footer
-        script(src="js/vendor/jquery/dist/jquery.js")
-        script(src="js/vendor/jquery-file-upload/js/jquery.fileupload.js")
+	head
+		meta(charset='utf-8')
+		link(href='css/style.css' rel='stylesheet')
+	+page
+		+wrapper
+			+content
+				+block-result
+			+sidebar
+				+block-upload
+				+block-place
+				+block-transparency
+				+block-download
+		+footer
+		script(src="js/vendor/jquery/dist/jquery.js")
+		script(src="js/vendor/jquery-file-upload/js/jquery.fileupload.js")
+		script(src="js/blocks.js")

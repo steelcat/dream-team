@@ -1,15 +1,22 @@
 var del = require('del');
 var gulp = require('gulp');
 var mainBowerFiles = require('main-bower-files');
+var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
+var source = require('vinyl-source-stream');
 
 // Удаляем папку bower_components
 gulp.task('clean:bower', function (cb) {
 	del([
 		'bower_components'
 	], cb);
+});
+
+// Общая задача копирования библиотек
+gulp.task('bower:copy', ['bower:copy-js'], function() {
+
 });
 
 // Копируем JavaScript библиотеки
@@ -46,9 +53,16 @@ gulp.task('sass', function() {
 });
 
 // Копируем JS
-gulp.task('js', ['bower:copy-js'], function() {
+gulp.task('js', ['blocks-js'], function() {
 	return gulp.src(['app/js/**/*'])
 		.pipe(gulp.dest('public/js'));
+});
+
+// Собираем JS из блоков
+gulp.task('blocks-js', function() {
+    return gulp.src('app/blocks/**/*.js')
+        .pipe(concat('blocks.js'))
+        .pipe(gulp.dest('public/js/'));
 });
 
 // Копируем шрифты
@@ -77,9 +91,10 @@ gulp.task('php', function () {
 
 // Наблюдаем за изменениями файлов
 gulp.task('watch', function() {
-	gulp.watch('app/**/*.scss', ['sass']);
 	gulp.watch('app/**/*.jade', ['jade']);
+	gulp.watch('app/**/*.scss', ['sass']);
+	gulp.watch('app/**/*.js', ['js']);
 });
 
 // Задача по-умолчанию
-gulp.task('default', ['jade', 'sass', 'js', 'fonts', 'img', 'files', 'php', 'watch']);
+gulp.task('default', ['bower:copy', 'jade', 'sass', 'js', 'fonts', 'img', 'files', 'php', 'watch']);
