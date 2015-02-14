@@ -1,16 +1,20 @@
-.cf { zoom: 1; }
-.cf:before,
-.cf:after { content: ""; display: table; }
-.cf:after { clear: both; }
+.block-place{
+	padding-left: 19px;
+}
 
 .block-place__title{
-	margin-bottom: 35px;
-	font-size: 16px;
+	font: 14px/14px roboto_ltregular;
+	text-align: left;	
+	color: #2E3641;
+	margin: 20px 0px 20px 0px;
+	margin-bottom: 35px;	
+	padding-top: 18px;
 }
 
 .block-place__control__buttonset{
-	width: 102px;
-	height: 102px;
+	@include clearfix;
+	width: 98px;
+	height: 98px;
 	border: 1px #9eb2c0 solid;
 	border-radius: 3px;
 	overflow: hidden;
@@ -37,11 +41,13 @@
 }
 
 .block-place__control__spinners-item{
+	@include clearfix;
 	margin-bottom: 10px;
 }
 
 .axis-label{
-	font-size: 16px;
+	font: 14px/14px roboto_ltregular;
+	color: #2E3641;
 	height: 45px;
 	float: left;
 	vertical-align: middle;
@@ -55,7 +61,7 @@
 	border: 1px #9eb2c0 solid;
 	background-color: #f1f1f5;
 	border-radius: 3px;
-	font-size: 24px;
+	font: 20px roboto_ltregular;
 	text-align: center;
 	color: #444a53; 
 	float: left;
