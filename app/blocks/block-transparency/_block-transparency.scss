@@ -24,14 +24,17 @@
 }
 
 .block-transparency__slider__round {
-  position:absolute;
-  background: url("../img/thumb.png");
-  height: 24px;
-  width: 24px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
   left: 120px;
-  top: 0px;
+  top: 1px;
   cursor: move;
-  opacity: 0.9;
+  background: #9eb2c0;
+  border: 6px solid #dbe1e8;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.38);
+
 }
 .block-transparency__slider__round:hover{
  opacity: 1;
