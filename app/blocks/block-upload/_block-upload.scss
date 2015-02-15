@@ -1,41 +1,46 @@
 .block-upload {
-  height: 173px;
-  padding-top: 30px;
-  padding-left: 19px;
+  padding: 16px 19px 0;
+  height: 151px;
+  background-image: none;
+  @include clearfix;
 }
 .block-upload__title {
   font: 14px/14px roboto_ltregular;
   color: #2e3641;
-  margin-bottom: 8px;
+  margin-bottom: 9px;
 }
 .block-upload_input-container {
   position: relative;
-  margin-bottom: 26px;
-  height: 27px;
-  width: 220px;
+  margin: 0 0 24px;
 }
-.block-upload__button {
+.block-upload_input-container:after {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  overflow: hidden;
+  content: '';
+  right: 0;
+  top: 0;
+  bottom: 0;
   width: 39px;
-  height: 27px;
   background: url(../img/upload-icon.png) no-repeat center #F97E76;
   @include border-right-radius(3px);
   z-index: 20;
 }
-.block-upload__input {
-  position: absolute;
-  right: 0px;
-  top: 0px;
+.block-upload__input-imitation {
+  position: relative;
   color: #9eb2c0;
-  font: 12px/27px segoe_uil;
-  width: 220px;
+  font: 12px/22px segoe_uil;
   height: 27px;
-  padding: 0;
+  padding: 0 5px;
   border: 1px solid #9EB2C0;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  z-index: 10;
+}
+.block-upload__input-watermark, .block-upload__input-main {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 30;
 }
