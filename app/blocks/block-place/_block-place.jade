@@ -2,16 +2,16 @@ mixin block-place
 	.block-place.block
 		.block-place__title Положение
 		.block-place__control
-			.block-place__control__buttonset
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
-				.block-place__control__buttonset-item
+			ol.block-place__control__buttonset
+				li.block-place__control__buttonset-item#top-left
+				li.block-place__control__buttonset-item#top
+				li.block-place__control__buttonset-item#top-right
+				li.block-place__control__buttonset-item#center-left
+				li.block-place__control__buttonset-item#center
+				li.block-place__control__buttonset-item#center-right
+				li.block-place__control__buttonset-item#bottom-left
+				li.block-place__control__buttonset-item#bottom
+				il.block-place__control__buttonset-item#bottom-right
 			.block-place__control__spinners
 				form.block-place__control__spinners-item
 					label(for="spinner-axis-x" class="axis-label") X
