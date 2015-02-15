@@ -12,25 +12,19 @@
 }
 
 .block-transparency__slider-container{
-
-.block-transparency__slider{
   position: relative;
   overflow: hidden;
   padding: 5px 0 11px;
   margin-bottom: 20px;
-  position: relative;
+
 }
 
 .block-transparency__slider{
-
-
-.block-transparency__slider__line{
   margin: 5px 0 0 22px;
   height: 3px;
   width: 218px;
   background-color: #9eb2c0;
   background-size: 50% 9px;
-
 }
 
 .block-transparency__slider-container .ui-slider-handle {
@@ -38,15 +32,16 @@
   width: 20px;
   height: 20px;
   left: 120px;
-  top: -9px;
+  top: 1px;
   cursor: move;
   background: #9eb2c0;
   border: 6px solid #dbe1e8;
   border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.38);
-  margin-left: -10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.38); 
 }
 
 .block-transparency__slider__round:hover{
  opacity: 1;
 }
+
+
