@@ -18,6 +18,8 @@
 	border: 1px #9eb2c0 solid;
 	border-radius: 3px;
 	overflow: hidden;
+	margin: 0;
+	padding: 0;
 	margin-bottom: 5px;
 	float: left;
 }
@@ -32,7 +34,7 @@
 	margin: -1px;
 }
 
-.block-place__control__buttonset-item:hover{
+.block-place__control__buttonset-item.ui-selected {
 	background-color: #f97e76;
 }
 
