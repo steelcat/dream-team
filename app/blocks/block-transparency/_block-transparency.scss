@@ -25,6 +25,7 @@
   width: 218px;
   background-color: #9eb2c0;
   background-size: 50% 9px;
+  position: relative;
 }
 
 .block-transparency__slider-container .ui-slider-handle {
@@ -32,12 +33,13 @@
   width: 20px;
   height: 20px;
   left: 120px;
-  top: 1px;
+  top: -9px;
   cursor: move;
   background: #9eb2c0;
   border: 6px solid #dbe1e8;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.38); 
+  margin-left: -10px;
 }
 
 .block-transparency__slider__round:hover{
