@@ -2,6 +2,7 @@
   overflow: hidden;
   clear: both;
 }
+
 .block-transparency__title{
   font-family: 'roboto_ltregular';
   text-align: left;
@@ -9,12 +10,14 @@
   color: #2e3641;
   margin: 20px 0 20px 20px;
 }
+
 .block-transparency__slider{
   position: relative;
   overflow: hidden;
   padding: 5px 0 11px;
   margin-bottom: 20px;
 }
+
 .block-transparency__slider__line{
   margin: 5px 0 0 22px;
   height: 3px;
@@ -28,14 +31,14 @@
   width: 20px;
   height: 20px;
   left: 120px;
-  top: 1px;
+  top: -9px;
   cursor: move;
   background: #9eb2c0;
   border: 6px solid #dbe1e8;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.38);
-
 }
+
 .block-transparency__slider__round:hover{
  opacity: 1;
 }
