@@ -94,6 +94,7 @@ gulp.task('watch', function() {
 	gulp.watch('app/**/*.jade', ['jade']);
 	gulp.watch('app/**/*.scss', ['sass']);
 	gulp.watch('app/**/*.js', ['js']);
+    gulp.watch('app/**/*.php', ['php']);
 });
 
 // Задача по-умолчанию
