@@ -30,7 +30,7 @@
 					}
 				});
 			};
-		},
+		}
 	};
 	app.initialize();
 })(jQuery);

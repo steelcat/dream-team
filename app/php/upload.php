@@ -10,6 +10,12 @@
  * http://www.opensource.org/licenses/MIT
  */
 
-error_reporting(E_ALL | E_STRICT);
 require('UploadHandler/UploadHandler.php');
-$upload_handler = new UploadHandler();
+$upload_handler = new UploadHandler(
+    array(
+    'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/../files/',
+    'upload_url' => $this->get_full_url().'/../files/'
+),
+    true,
+    null
+);
