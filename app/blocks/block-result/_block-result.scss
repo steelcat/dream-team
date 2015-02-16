@@ -14,9 +14,13 @@
   position: absolute;
   width: 651px;
   height: 534px;
-  background: url(../files/watermark.png) no-repeat top left;
+  //background: url(../files/watermark.png) no-repeat top left;
   opacity: 0.5;
   z-index: 20;
+}
+.block-result__watermark img{
+  position: absolute;
+  display: block;
 }
 .block-result__original {
   position: absolute;
