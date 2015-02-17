@@ -84,7 +84,7 @@ class UploadHandler
             'accept_file_types' => '/.+$/i',
             // The php.ini settings upload_max_filesize and post_max_size
             // take precedence over the following max_file_size setting:
-            'max_file_size' => 3 * 1024 * 1024,
+            'max_file_size' => 8 * 1024 * 1024,
             'min_file_size' => 1,
             // The maximum number of files for the upload directory:
             'max_number_of_files' => null,
@@ -127,13 +127,17 @@ class UploadHandler
                     // Automatically rotate images based on EXIF meta data:
                     'auto_orient' => true
                 ),
-                // Uncomment the following to create medium sized images:
-                /*
-                'medium' => array(
-                    'max_width' => 800,
-                    'max_height' => 600
+                // Настроил размеры, под которые подстраивается загруженная картинка
+                // Сделал кроп, так как кратинка должна точно вписываться в размеры контейнера 651 на 534 пикселя
+
+                'resize' => array(
+                    'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/../upload/',
+                    'upload_url' => $this->get_full_url().'/../upload/',
+                    'crop' => true,
+                    'max_width' => 651,
+                    'max_height' => 534
                 ),
-                */
+
                 //  'thumbnail' => array(
                     // Uncomment the following to use a defined directory for the thumbnails
                     // instead of a subdirectory based on the version identifier.
@@ -182,6 +186,10 @@ class UploadHandler
             default:
                 $this->header('HTTP/1.1 405 Method Not Allowed');
         }
+    }
+
+    protected function resize_n_copy() {
+
     }
 
     protected function get_full_url() {
@@ -1042,7 +1050,7 @@ class UploadHandler
         // Free memory:
         $this->destroy_image_object($file_path);
     }
-
+    //TODO Здесь будет применяться изменение размера
     protected function handle_file_upload($uploaded_file, $name, $size, $type, $error,
             $index = null, $content_range = null) {
         $file = new \stdClass();
