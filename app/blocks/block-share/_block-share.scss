@@ -1,0 +1,51 @@
+.block-share {
+	position: fixed;
+	left: 0;
+	top: 189px;
+	z-index: 100;
+	@include clearfix;
+}
+.block-share__social-btns {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+	display: none;
+}
+.block-share__social-btns__btn {
+	position: relative;
+	display: block;
+	float: none;
+	background: rgba(255,255,255,0.6);
+	width: 43px;
+	height: 41px;
+	cursor: pointer;
+	&:before {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		content: '';
+		display: block;
+		opacity: .6;
+	}
+	&:hover:before {
+		opacity: 1;
+	}
+}
+.social-btns__toggler {
+	float: right;
+	&:before {
+		background: url(../img/share-toggler.png) no-repeat center center;
+	}
+}
+.fb:before {
+	background: url(../img/fb.png) no-repeat center center;
+}
+.tw:before {
+	background: url(../img/tw.png) no-repeat center center;
+}
+.vk:before {
+	background: url(../img/vk.png) no-repeat center center;
+}
