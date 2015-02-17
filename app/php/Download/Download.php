@@ -1,8 +1,8 @@
 <?php
 /*
- * Watermark Image PHP Class 0.0.1
+ * Watermark & Download Image PHP Class 0.0.1
  *
- * Apply Watermark to Image
+ * Apply Watermark to Image & Download It
  *
  * Copyright 2015, Vitaly Shutov
  * https://steelcat.org
@@ -12,5 +12,10 @@
  */
 class Watermark
 {
-    
+
+}
+
+class Download
+{
+
 }
