@@ -16,7 +16,7 @@
 					dataType: 'json',
 					done: function (e, data) {
 						$('.block-upload__input-main-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
-						$('.block-result__original').css( 'background-image', 'url(upload/resize/' + (data.files[0].name) + ')' );
+						$('.block-result__original').css( 'background-image', 'url(upload/' + (data.files[0].name) + ')' );
 					}
 				});
 			} else {
@@ -26,7 +26,7 @@
 					dataType: 'json',
 					done: function (e, data) {
 						$('.block-upload__input-watermark-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
-						$('.block-result__watermark').css( 'background-image', 'url(upload/resize/' + (data.files[0].name) + ')' );
+						$('.block-result__watermark').html('<img src="upload/' + data.files[0].name + '">');
 					}
 				});
 			};

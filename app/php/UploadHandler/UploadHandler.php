@@ -131,6 +131,8 @@ class UploadHandler
                 // Сделал кроп, так как кратинка должна точно вписываться в размеры контейнера 651 на 534 пикселя
 
                 'resize' => array(
+                    'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/../upload/',
+                    'upload_url' => $this->get_full_url().'/../upload/',
                     'crop' => true,
                     'max_width' => 651,
                     'max_height' => 534
