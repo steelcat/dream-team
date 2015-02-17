@@ -8,11 +8,8 @@
 		//TODO подумать, как менять при перезагрузки ватермарка
 		changed: true,//изначально false,а если загружен другой watermark -- true
 
-		//TODO возможно-ли засунуть эти переменные в функцию?
 		width: 0,
 		height: 0,
-		maxWidth: 0,
-		maxHeight: 0,
 
 		initialize : function () {
 			console.log('Подключен контроль блока переключения положений.');
@@ -53,14 +50,13 @@
 		setPosStop: function(){
 			clearInterval(app.timeout);
 		},
-		getImageParam: function(){//TODO уточнить про переменные, может возможно как-то иначе сохранить
+		getImageParam: function(){
 			app.width = $(".block-result__watermark img").width();
 			app.height = $(".block-result__watermark img").height();
 		},
 		getMaxMinPos: function(){
 			app.maxWidth = 651 - app.width;
 			app.maxHeight = 534 - app.height;
-			console.log(app.maxWidth+' '+app.maxHeight);
 		}
 
 	};
