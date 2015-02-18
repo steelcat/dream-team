@@ -46,7 +46,7 @@
 							console.log('Размер картинки больше 3 Мб')
 						}
 						$('.block-upload__input-watermark-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
-						$('.block-result__watermark').html('<img src="files/' + (data.result.files[0].url) + '">');
+						$('.block-result__watermark').html('<img class="block-result__watermark-image" src="files/' + (data.result.files[0].url) + '">');
 					}
 				});
 			};
