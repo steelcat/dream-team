@@ -46,7 +46,7 @@ class UploadHandler
             'script_url' => $this->get_full_url().'/',
             'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/../upload/',
             'upload_url' => $this->get_full_url().'/../upload/',
-            'user_dirs' => false,
+            'user_dirs' => true,
             'mkdir_mode' => 0755,
             'param_name' => 'files',
             // Set the following option to 'POST', if your server does not support
@@ -1050,7 +1050,7 @@ class UploadHandler
         // Free memory:
         $this->destroy_image_object($file_path);
     }
-    //TODO Здесь будет применяться изменение размера
+    //TODO Изначальная функция обработки
     protected function handle_file_upload($uploaded_file, $name, $size, $type, $error,
             $index = null, $content_range = null) {
         $file = new \stdClass();

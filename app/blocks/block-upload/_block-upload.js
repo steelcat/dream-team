@@ -15,6 +15,8 @@
 				input.fileupload({
 					dataType: 'json',
 					done: function (e, data) {
+
+						console.log(data.files[0]);
 						$('.block-upload__input-main-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
 						$('.block-result__original').css( 'background-image', 'url(upload/' + (data.files[0].name) + ')' );
 					}
