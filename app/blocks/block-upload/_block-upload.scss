@@ -44,3 +44,13 @@
   opacity: 0;
   z-index: 30;
 }
+
+// Модальное окно ошибок
+.block-upload-size-error {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .2em;
+  outline: 0;
+}
