@@ -256,7 +256,7 @@ class UploadHandler
             }
             $version_path = rawurlencode($version).'/';
         }
-        return $this->options['upload_url'].$this->get_user_path()
+        return $this->get_user_path() // Поменял определение пути к картинке
             .$version_path.rawurlencode($file_name);
     }
 
