@@ -1,11 +1,21 @@
 var del = require('del');
 var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
 var mainBowerFiles = require('main-bower-files');
 var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
+
+// Browser definitions for autoprefixer
+var AUTOPREFIXER_BROWSERS = [
+	'last 3 versions',
+	'ie >= 8',
+	'ios >= 7',
+	'android >= 4.4',
+	'bb >= 10'
+];
 
 // Удаляем папку bower_components
 gulp.task('clean:bower', function (cb) {
@@ -49,6 +59,7 @@ gulp.task('sass', function() {
 	return gulp.src(['app/scss/style.scss'])
 		.pipe(sass())
 		.on('error', function(err){ console.log(err.message); })
+		.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
 		.pipe(gulp.dest('public/css'));
 });
 
