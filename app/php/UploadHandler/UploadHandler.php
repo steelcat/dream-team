@@ -133,7 +133,7 @@ class UploadHandler
                 'resize' => array(
                     'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/../files/',
                     'upload_url' => $this->get_full_url().'/../files/',
-                    'crop' => true,
+                    'crop' => false,
                     'max_width' => 651,
                     'max_height' => 534
                 ),
