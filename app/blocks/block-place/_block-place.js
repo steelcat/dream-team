@@ -13,8 +13,8 @@
 
 		initialize : function () {
 			console.log('Подключен контроль блока переключения положений.');
-			app.gridcontrol();
-			app.listen(); //Слушаем
+			app.gridControl(); // Подключаем сетку в квадрате
+			app.listen(); //Слушаем события блока
 		},
 		listen: function(){
 			console.log('Прослушка place__control__spinners запущена');
@@ -27,7 +27,7 @@
 				app.getMaxMinPos();//Получаем лимиты для перемещения watermark`a
 			}
 		},
-		gridcontrol: function(event) {
+		gridControl: function(event) {
 			$(".block-place__control__buttonset").selectable({
 				stop: function(e, ui) {
 					$(".ui-selected:first", this).each(function() {
@@ -39,46 +39,25 @@
 		setGridPos: function (event,ui) {
 			console.log('Выбран квадрат сетки положения = '+ ui.selected.id);
 			switch (ui.selected.id) {
-				case 'top-left':
-					console.log('top-left');
-					$(".block-result__watermark-image").css("top", "0px").css("left", "0px");
-					break;
-				case 'top':
-					console.log('top');
-					$(".block-result__watermark-image").css("top", "0px").css("left", app.maxWidth/2 + "px");
-					break;
-				case 'top-right':
-					console.log('top-right');
-					$(".block-result__watermark-image").css("top", "0px").css("left", app.maxWidth + "px");
-					break;
-				case 'center-left':
-					console.log('center-left');
-					$(".block-result__watermark-image").css("top", app.maxHeight/2 + "px").css("left", "0px");
-					break;
-				case 'center':
-					console.log('center');
-					$(".block-result__watermark-image").css("top", app.maxHeight/2 + "px").css("left", app.maxWidth/2 + "px");
-					break;
-				case 'center-right':
-					console.log('center-right');
-					$(".block-result__watermark-image").css("top", app.maxHeight/2 + "px").css("left", app.maxWidth + "px");
-					break;
-				case 'bottom-left':
-					console.log('top-left');
-					$(".block-result__watermark-image").css("top", app.maxHeight + "px").css("left", "0px");
-					break;
-				case 'bottom':
-					console.log('top');
-					$(".block-result__watermark-image").css("top", app.maxHeight + "px").css("left", app.maxWidth/2 + "px");
-					break;
-				case 'bottom-right':
-					console.log('top-right');
-					$(".block-result__watermark-image").css("top", app.maxHeight + "px").css("left", app.maxWidth + "px");
-					break;
-				default:
-					console.log('default');
-					break
+				case 'top-left': x = 0; y = 0; break;
+				case 'top': x = 0; y = Math.round(app.maxWidth/2); break;
+				case 'top-right':  x = 0; y = app.maxWidth; break;
+
+				case 'center-left': x = Math.round(app.maxHeight/2); y = 0; break;
+				case 'center': x = Math.round(app.maxHeight/2); y = Math.round(app.maxWidth/2); break;
+				case 'center-right': x = Math.round(app.maxHeight/2); y = app.maxWidth; break;
+
+				case 'bottom-left': x = app.maxHeight; y = 0; break;
+				case 'bottom': x = app.maxHeight; y = Math.round(app.maxWidth/2); break;
+				case 'bottom-right': x = app.maxHeight; y = app.maxWidth; break;
+				default: break
 			}
+			$(".block-result__watermark-image").css("top", x + "px").css("left", y + "px");
+			app.setValue(x,y);
+		},
+		setValue: function(x,y) {
+			$('#x-value').attr('value', x);
+			$('#y-value').attr('value', y);
 		},
 		setPos: function(event){
 			var _this = this;
