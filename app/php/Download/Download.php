@@ -10,12 +10,14 @@
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
-class Watermark
+
+class Download extends PHPImageWorkshop\ImageWorkshop
 {
-
-}
-
-class Download
-{
-
+    public static function imageResult($x,$y) {
+        $originalLayer = Download::initFromPath('../files/original.jpg');
+        $watermarkLayer = Download::initFromPath('../files/watermark.jpg');
+        $originalLayer->addLayer(1, $watermarkLayer, $x, $y, "LT");
+        $image = $originalLayer->getResult();
+        return $image;
+    }
 }
