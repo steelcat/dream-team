@@ -53,11 +53,7 @@
 				default: break
 			}
 			$(".block-result__watermark-image").css("top", x + "px").css("left", y + "px");
-			app.setValue(x,y);
-		},
-		setValue: function(x,y) {
-			$('#x-value').attr('value', x);
-			$('#y-value').attr('value', y);
+			blocksLibrary.setValue(x,y);
 		},
 		setPos: function(event){
 			var _this = this;

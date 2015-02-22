@@ -1,23 +1,6 @@
-var blocksLibrary = new function () {
-
-	function trim() {
-
+var blocksLibrary = {
+	setValue: function setValue(x,y) {
+		$('#x-value').attr('value', x);
+		$('#y-value').attr('value', y);
 	}
-
-	function find() {
-
-	}
-
-	// функция которая не будет доступна извне, она является внутренней для библиотеки
-	function select() {
-
-	}
-
-
-	// функции которые хотим сделать доступными пользователю
-	return {
-		trim: trim,
-		find: find
-	}
-
 };
