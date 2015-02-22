@@ -14,7 +14,7 @@
 class Download extends PHPImageWorkshop\ImageWorkshop
 {
     public static function imageResult($x,$y) {
-        $originalLayer = Download::initFromPath('../files/original.jpg');
+        $originalLayer = Download::initFromPath('../files/original.png');
         $watermarkLayer = Download::initFromPath('../files/watermark.jpg');
         $originalLayer->addLayer(1, $watermarkLayer, $x, $y, "LT");
         $image = $originalLayer->getResult();

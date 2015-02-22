@@ -11,4 +11,6 @@ $('.block-download__button-submit').click(function(){
 			y: y
 		}
 	);
+	//window.location = '../files/result.jpg';
+	//open('../files/result.jpg');
 });
