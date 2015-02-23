@@ -5,6 +5,8 @@ $('.block-download__button-submit').click(function(){
 	var watermarkImage = document.getElementById('watermark-image');
 	console.log(originalImage);
 	//var originalImagePath =
+	var original = originalImage.;
+	var watermark =
 	var x = watermarkImage.offsetLeft;
 	var y = watermarkImage.offsetTop;
 	$.ajax({
