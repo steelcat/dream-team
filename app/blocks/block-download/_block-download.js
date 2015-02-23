@@ -11,6 +11,7 @@ $('.block-download__button-submit').click(function(){
 			y: y
 		}
 	);
-	//window.location = '../files/result.jpg';
+	window.location = 'php/download.php';
 	//open('../files/result.jpg');
+	//window.open('php/download.php','_blank');
 });
