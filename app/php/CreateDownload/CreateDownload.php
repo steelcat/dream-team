@@ -1,6 +1,6 @@
 <?php
 /*
- * Watermark & Download Image PHP Class 0.0.1
+ * Create Result Image & Download Result Image PHP Class 0.0.1
  *
  * Apply Watermark to Image & Download It
  *
@@ -11,11 +11,11 @@
  * http://www.opensource.org/licenses/MIT
  */
 
-class Download extends PHPImageWorkshop\ImageWorkshop
+class CreateDownload extends PHPImageWorkshop\ImageWorkshop
 {
     public static function imageResult($x,$y) {
-        $originalLayer = Download::initFromPath('../files/original.png');
-        $watermarkLayer = Download::initFromPath('../files/watermark.jpg');
+        $originalLayer = CreateDownload::initFromPath('../files/original.png');
+        $watermarkLayer = CreateDownload::initFromPath('../files/watermark.jpg');
         $originalLayer->addLayer(1, $watermarkLayer, $x, $y, "LT");
         $image = $originalLayer->getResult();
         return $image;
