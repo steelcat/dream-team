@@ -13,7 +13,7 @@
 
 class CreateDownload extends PHPImageWorkshop\ImageWorkshop
 {
-    public static function imageResult($x,$y) {
+    public static function imageResult($original,$watermark,$x,$y) {
         $originalLayer = CreateDownload::initFromPath('../files/original.png');
         $watermarkLayer = CreateDownload::initFromPath('../files/watermark.jpg');
         $originalLayer->addLayer(1, $watermarkLayer, $x, $y, "LT");

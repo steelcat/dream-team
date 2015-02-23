@@ -32,7 +32,7 @@
 							console.log(data.result.files[0].error)
 						}
 						$('.block-upload__input-main-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
-						$('.block-result__original').html('<img class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
+						$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
 						$('.block-result__original').css( 'background', 'none' );
 						$('.block-result__original').css( 'height', 'none' );
 					}
