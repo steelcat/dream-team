@@ -3,18 +3,18 @@ $('.block-download__button-submit').click(function(){
     console.log('Кнопка Скачать нажата');
 	var originalImage = document.getElementById('original-image');
 	var watermarkImage = document.getElementById('watermark-image');
-	console.log(originalImage);
-	//var originalImagePath =
-	var original = originalImage.;
-	var watermark =
+	var originalImagePath = originalImage.src;
+	console.log('original path = ' + originalImagePath);
+	var watermarkImagePath =  watermarkImage.src;
+	console.log('watermark path = ' + watermarkImagePath);
 	var x = watermarkImage.offsetLeft;
 	var y = watermarkImage.offsetTop;
 	$.ajax({
 			type: 'GET', //тип запроса
 			url: "php/create.php", //адрес скрипта
 			data: {
-				original: original,
-				watermark: watermark,
+				original: originalImagePath,
+				watermark: watermarkImagePath,
 				x: x,
 				y: y
 			}, //данные
