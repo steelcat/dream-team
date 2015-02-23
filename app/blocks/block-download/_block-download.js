@@ -1,15 +1,25 @@
 // Блок выгрузки картинок и сброса параметров block-download
 $('.block-download__button-submit').click(function(){
     console.log('Кнопка Скачать нажата');
+	var originalImage = document.getElementById('watermark-image');
 	var watermarkImage = document.getElementById('watermark-image');
+	console.log(originalImage.url);
+	//var originalImagePath =
 	var x = watermarkImage.offsetLeft;
 	var y = watermarkImage.offsetTop;
-	$.get(
-		"php/download.php",
-		{
-			x: x,
-			y: y
+	$.ajax({
+			type: 'GET', //тип запроса
+			url: "php/download.php", //адрес скрипта
+			data: {
+				x: x,
+				y: y
+			}, //данные
+			success: function(){
+				window.open('../files/result.jpg');
+			},
+			error: function(textStatus){
+				console.log(textStatus);
+			}
 		}
 	);
-	window.open('../files/result.jpg','_blank');
 });
