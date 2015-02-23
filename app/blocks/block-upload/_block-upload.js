@@ -1,60 +1,50 @@
 // Блок загрузки картинок block-upload
 
-(function ($){
-	var app = {
-		initialize: function () {
-			this.setListners();
-		},
-		setListners: function () {
-			$('.block-upload__input-original').on('click', app.fileUploadOriginal);
-			$('.block-upload__input-watermark').on('click', app.fileUploadWatermark);
-		},
-		ModalSizeError: function() { //TODO Сделать вывод ошибок в виде всплыыающих подсказок, отказаться от модальных окон
-			$('.block-upload-size-error').dialog({
-				autoOpen: false,
-				modal: true,
-				buttons: {
-					Ok: function() {
-						$( this ).dialog( "закрыть" );
-					}
+var blockUpload = {
+	ModalSizeError: function() { //TODO Сделать вывод ошибок в виде всплыыающих подсказок, отказаться от модальных окон
+		$('.block-upload-size-error').dialog({
+			autoOpen: false,
+			modal: true,
+			buttons: {
+				Ok: function() {
+					$( this ).dialog( "закрыть" );
 				}
-			});
-		},
-		fileUploadOriginal: function () {
-			var input = $(this);
-			// Значит это
-			// Исходное изображение
-			input.fileupload({
-				dataType: 'json',
-				done: function (e, data) {
-					console.log(data.result.files[0]);
-					if (data.result.files[0].error) {
-						console.log(data.result.files[0].error)
-					}//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
-					$('.block-upload__input-original-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
-					$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
-					var originalImageHeight = document.getElementById('original-image');
-					console.log(originalImageHeight);
-					$('.block-result__original').css('background', 'none');
-					$('.block-result__original').css('height', 'none');
-				}
-			});
-		},
-		fileUploadWatermark: function () { // Загрузка водяного знака
-			var input = $(this);
-			input.fileupload({
-				dataType: 'json',
-				done: function (e, data) {
-					console.log(data.result.files[0]);
-					if (data.result.files[0].error) {
-						console.log(data.result.files[0].error)
-					}//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
-					$('.block-upload__input-watermark-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
-					$('.block-result__watermark').html('<img id="watermark-image" class="block-result__watermark-image" src="files/' + (data.result.files[0].url) + '">');
-					$('.block-result__watermark-image').draggable({ containment: ".block-result__watermark", scroll: false });
-				}
-			});
-		}
-	};
-	app.initialize();
-})(jQuery);
+			}
+		});
+	},
+	fileUploadOriginal: function () { // Загрузка оригинальной картинки
+		var input = $(this);
+		// Значит это
+		// Исходное изображение
+		input.fileupload({
+			dataType: 'json',
+			done: function (e, data) {
+				console.log(data.result.files[0]);
+				if (data.result.files[0].error) {
+					console.log(data.result.files[0].error)
+				}//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
+				$('.block-upload__input-original-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
+				$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
+				var originalImageHeight = document.getElementById('original-image');
+				console.log(originalImageHeight);
+				$('.block-result__original').css('background', 'none');
+				$('.block-result__original').css('height', 'none');
+			}
+		});
+	},
+	fileUploadWatermark: function () { // Загрузка водяного знака
+		var input = $(this);
+		input.fileupload({
+			dataType: 'json',
+			done: function (e, data) {
+				console.log(data.result.files[0]);
+				if (data.result.files[0].error) {
+					console.log(data.result.files[0].error)
+				}//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
+				$('.block-upload__input-watermark-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
+				$('.block-result__watermark').html('<img id="watermark-image" class="block-result__watermark-image" src="files/' + (data.result.files[0].url) + '">');
+				$('.block-result__watermark-image').draggable({ containment: ".block-result__watermark", scroll: false });
+			}
+		});
+	}
+};
