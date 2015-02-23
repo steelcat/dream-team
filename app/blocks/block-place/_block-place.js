@@ -1,7 +1,6 @@
 // Блок положения картинок block-place
 
 (function() {
-
 	var app = {
 		// Инициализация
 		timeout: 0,

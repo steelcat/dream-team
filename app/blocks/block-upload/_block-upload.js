@@ -1,4 +1,5 @@
 // Блок загрузки картинок block-upload
+
 (function ($){
 	var app = {
 		initialize: function () {

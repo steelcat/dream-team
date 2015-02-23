@@ -1,4 +1,5 @@
 // Блок показа картинок block-result
+
 (function ($){
 	var app = {
 		initialize: function () {
