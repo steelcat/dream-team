@@ -1,0 +1,95 @@
+.block-place__tile {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 11px 8px 0;
+}
+.block-place__tile__tiled, .block-place__tile__untiled {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.block-place__tile__tiled__btn, .block-place__tile__untiled__btn {
+	position: relative;
+	width: 19px;
+	height: 19px;
+	display: block;
+	border: 1px solid #9eb2c0;
+	overflow: hidden;
+	float: left;
+}
+.block-place__tile__tiled__btn {
+	&.ui-state-active {
+		border: 1px solid #f97e76;
+		&:before, &:after, span:after, span:before {
+			background: #f97e76;
+		}
+	}
+	&:before {
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		content: '';
+		display: block;
+		background: #9eb2c0;
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+	}
+	&:after {
+		position: absolute;
+		bottom: 2px;
+		right: 2px;
+		content: '';
+		display: block;
+		background: #9eb2c0;
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+	}
+	span {
+		overflow: hidden;
+		display: block;
+		text-indent: -9999px;
+		width: 6px;
+		height: 13px;
+		margin: 2px;
+		&:after {
+			float: none;
+			content: '';
+			display: block;
+			background: #9eb2c0;
+			width: 6px;
+			height: 6px;
+			border-radius: 1px;
+		}
+		&:before {
+			@extend &:after;
+			margin-bottom: 1px;
+		}
+	}
+}
+.block-place__tile__untiled__btn {
+	margin-left: 10px;
+	span {
+		overflow: hidden;
+		display: block;
+		text-indent: -9999px;
+		width: 15px;
+		height: 15px;
+		margin: 1px;
+		background: #9eb2c0;
+		border-radius: 1px;
+	}
+	&.ui-state-active {
+		border: 1px solid #f97e76;
+		span {
+			background: #f97e76;
+		}
+	}
+}
