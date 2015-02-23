@@ -27,16 +27,17 @@ class Download extends PHPImageWorkshop\ImageWorkshop
             if (ob_get_level()) {
                 ob_end_clean();
             }
-            // заставляем браузер показать окно сохранения файла
-            header('Content-Description: File Transfer');
-            header('Content-Disposition: attachment; filename=' . basename($file));
-            header('Content-Transfer-Encoding: binary');
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate');
+            $mime = 'application/force-download';
             header('Pragma: public');
-            header('Content-Length: ' . filesize($file));
-            // читаем файл и отправляем его пользователю
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+            header('Cache-Control: private',false);
+            //header('Content-Type: '.$mime);
+            header('Content-Disposition: attachment; filename="'.basename($file).'"');
+            header('Content-Transfer-Encoding: binary');
+            header('Connection: close');
             readfile($file);
+            exit();
         }
     }
 }
