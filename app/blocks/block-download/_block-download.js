@@ -9,13 +9,13 @@ $('.block-download__button-submit').click(function(){
 	var y = watermarkImage.offsetTop;
 	$.ajax({
 			type: 'GET', //тип запроса
-			url: "php/download.php", //адрес скрипта
+			url: "php/create.php", //адрес скрипта
 			data: {
 				x: x,
 				y: y
 			}, //данные
 			success: function(){
-				window.open('../files/result.jpg');
+				window.open('php/download.php');
 			},
 			error: function(textStatus){
 				console.log(textStatus);
