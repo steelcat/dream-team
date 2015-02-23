@@ -25,7 +25,7 @@
   @include border-right-radius(3px);
   z-index: 20;
 }
-.block-upload__input-main-imitation, .block-upload__input-watermark-imitation {
+.block-upload__input-original-imitation, .block-upload__input-watermark-imitation {
   position: relative;
   color: #9eb2c0;
   font: 12px/22px segoe_uil;
@@ -36,7 +36,7 @@
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.block-upload__input-watermark, .block-upload__input-main {
+.block-upload__input-original, .block-upload__input-watermark {
   position: absolute;
   width: 100%;
   top: 0;

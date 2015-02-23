@@ -1,3 +1,4 @@
+// Блок социальных закладок block-share
 (function ($){
 	var app = {
 		initialize: function () {
