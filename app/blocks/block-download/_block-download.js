@@ -15,7 +15,8 @@ $('.block-download__button-submit').click(function(){
 				y: y
 			}, //данные
 			success: function(){
-				window.open('php/download.php');
+				location.replace('php/download.php');
+				//open('php/download.php');
 			},
 			error: function(textStatus){
 				console.log(textStatus);
