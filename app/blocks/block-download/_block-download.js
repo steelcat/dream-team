@@ -1,7 +1,7 @@
 // Блок выгрузки картинок и сброса параметров block-download
 $('.block-download__button-submit').click(function(){
     console.log('Кнопка Скачать нажата');
-	var originalImage = document.getElementById('watermark-image');
+	var originalImage = document.getElementById('original-image');
 	var watermarkImage = document.getElementById('watermark-image');
 	console.log(originalImage);
 	//var originalImagePath =
