@@ -22,6 +22,7 @@
 		},
 		fileUploadFunc: function () {
 			var input = $(this);
+			var image = new Image();
 			if(input.hasClass('block-upload__input-main')){
 				// Значит это
 				// Исходное изображение
@@ -31,7 +32,7 @@
 						console.log(data.result.files[0]);
 						if (data.result.files[0].error) {
 							console.log(data.result.files[0].error)
-						}
+						}//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
 						$('.block-upload__input-main-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
 						$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
 						$('.block-result__original').css( 'background', 'none' );
