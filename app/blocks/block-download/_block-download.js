@@ -9,6 +9,8 @@ $('.block-download__button-submit').click(function(){
 	console.log('watermark path = ' + watermarkImagePath);
 	var x = watermarkImage.offsetLeft;
 	var y = watermarkImage.offsetTop;
+	var opacity = $(".block-result__watermark").css("opacity");
+	console.log('opacity = ' + opacity);
 	$.ajax({
 			type: 'GET', //тип запроса
 			url: "php/create.php", //адрес скрипта
@@ -16,7 +18,8 @@ $('.block-download__button-submit').click(function(){
 				original: originalImagePath,
 				watermark: watermarkImagePath,
 				x: x,
-				y: y
+				y: y,
+				opacity: opacity
 			}, //данные
 			success: function(){
 				location.replace('php/download.php');
