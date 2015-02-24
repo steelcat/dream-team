@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var mainBowerFiles = require('main-bower-files');
 var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
 var gulpFilter = require('gulp-filter');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
@@ -73,6 +74,8 @@ gulp.task('js', ['blocks-js'], function() {
 gulp.task('blocks-js', function() {
     return gulp.src('app/blocks/**/*.js')
         .pipe(concat('blocks.js'))
+	    .pipe(jshint())
+	    .pipe(jshint.reporter('default'))
         .pipe(gulp.dest('public/js/'));
 });
 
