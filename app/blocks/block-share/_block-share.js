@@ -17,7 +17,7 @@
 				title = $(document).prop('title'),
 				desc = $('meta[name="description"]').attr('content'),
 				url = win.location.href;
-
+			// TODO: Здесь стоит применить switch
 			if(link.hasClass('fb')){
 				win.open( 'https://www.facebook.com/sharer/sharer.php?url=' + url, 'facebook', 'width=640, height=200');
 			}
@@ -26,7 +26,7 @@
 			}
 			if(link.hasClass('tw')){
 				win.open( 'https://twitter.com/intent/tweet?status=' + title + ' - ' + url, 'twitter', 'width=640, height=260' );
-			};
+			}
 			e.preventDefault();
 		}
 	};

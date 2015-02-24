@@ -33,7 +33,7 @@
 						$(this).siblings().removeClass("ui-selected");
 					});
 				}
-			})
+			});
 		},
 		setGridPos: function (event,ui) {
 			console.log('Выбран квадрат сетки положения = '+ ui.selected.id);
@@ -49,7 +49,7 @@
 				case 'bottom-left': x = app.maxHeight; y = 0; break;
 				case 'bottom': x = app.maxHeight; y = Math.round(app.maxWidth/2); break;
 				case 'bottom-right': x = app.maxHeight; y = app.maxWidth; break;
-				default: break
+				default: break;
 			}
 			$(".block-result__watermark-image").css("top", x + "px").css("left", y + "px");
 			blocksLibrary.setValue(x,y);
