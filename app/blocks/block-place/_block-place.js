@@ -51,7 +51,7 @@
 				case 'bottom-right': x = app.maxHeight; y = app.maxWidth; break;
 				default: break;
 			}
-			$(".block-result__watermark-image").css("top", x + "px").css("left", y + "px");
+			$(".block-result__watermark").css("top", x + "px").css("left", y + "px");
 			blocksLibrary.setValue(x,y);
 		},
 		setPos: function(event){

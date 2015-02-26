@@ -4,13 +4,10 @@ var blockDownload = {
 		var originalImage = document.getElementById('original-image');
 		var watermarkImage = document.getElementById('watermark-image');
 		var originalImagePath = originalImage.src;
-		console.log('original path = ' + originalImagePath);
 		var watermarkImagePath =  watermarkImage.src;
-		console.log('watermark path = ' + watermarkImagePath);
-		var x = watermarkImage.offsetLeft;
-		var y = watermarkImage.offsetTop;
+		var x = $(".block-result__watermark").css("left");
+		var y = $(".block-result__watermark").css("top");
 		var opacity = $(".block-result__watermark").css("opacity");
-		console.log('opacity = ' + opacity);
 		$.ajax({
 				type: 'GET', //тип запроса
 				url: "php/create.php", //адрес скрипта
