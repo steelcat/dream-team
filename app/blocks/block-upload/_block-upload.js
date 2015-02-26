@@ -19,6 +19,8 @@ var blockUpload = {
 		input.fileupload({
 			dataType: 'json',
 			done: function (e, data) {
+				var img = new Image();
+				img.src = 'files/' + (data.result.files[0].url);
 				console.log(data.result.files[0]);
 				if (data.result.files[0].error) {
 					console.log(data.result.files[0].error);
@@ -26,7 +28,10 @@ var blockUpload = {
 				$('.block-upload__input-original-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
 				$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
 				$('.block-result__original').css('background', 'none');
-				$('.block-result__original').css('height', 'none');
+				img.onload = function() {
+					$('.block-result__original').css('height', img.height);
+					$('.block-result__original').css('width', img.width);
+				}
 			}
 		});
 	},
