@@ -22,7 +22,7 @@ var blockUpload = {
 				var img = new Image();
 				img.src = 'files/' + (data.result.files[0].url);
 				console.log(data.result.files[0]);
-				if ((data.result.files[0].error)&&!(data.result.files[0].error==='Failed to resize image (resize)')) {
+				if ((data.result.files[0].error)&&(data.result.files[0].error!=='Failed to resize image (resize)')) {
 					console.log(data.result.files[0].error);
 					$('.block-upload__input-original-imitation').text('Ошибка').css('color', 'red');
 				} else {
@@ -31,6 +31,8 @@ var blockUpload = {
 					$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
 					$('.block-result__original').css('background', 'none');
 					img.onload = function() {
+						$('.block-result__original').css('left', 0);
+						$('.block-result__original').css('top', 0);
 						$('.block-result__original').css('height', img.height);
 						$('.block-result__original').css('width', img.width);
 					};
@@ -46,7 +48,7 @@ var blockUpload = {
 				var img = new Image();
 				img.src = 'files/' + (data.result.files[0].url);
 				console.log(data.result.files[0]);
-				if ((data.result.files[0].error)&&!(data.result.files[0].error==='Failed to resize image (resize)')) {
+				if ((data.result.files[0].error)&&(data.result.files[0].error!=='Failed to resize image (resize)')) {
 					console.log(data.result.files[0].error);
 					$('.block-upload__input-watermark-imitation').text('Ошибка').css('color', 'red');
 				} else {
@@ -54,6 +56,8 @@ var blockUpload = {
 					$('.block-upload__input-watermark-imitation').text(data.files[0].name).css('color', '#9eb2c0'); // добавит название файла в блок имитирующий input
 					$('.block-result__watermark').html('<img id="watermark-image" class="block-result__watermark-image" src="files/' + (data.result.files[0].url) + '">');
 					img.onload = function () {
+						$('.block-result__watermark').css('left', 0);
+						$('.block-result__watermark').css('top', 0);
 						$('.block-result__watermark').css('height', img.height);
 						$('.block-result__watermark').css('width', img.width);
 					};
