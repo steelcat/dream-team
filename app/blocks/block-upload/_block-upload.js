@@ -25,8 +25,6 @@ var blockUpload = {
 				}//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
 				$('.block-upload__input-original-imitation').text(data.files[0].name); // добавит название файла в блок имитирующий input
 				$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
-				var originalImageHeight = document.getElementById('original-image');
-				console.log(originalImageHeight);
 				$('.block-result__original').css('background', 'none');
 				$('.block-result__original').css('height', 'none');
 			}
