@@ -33,7 +33,7 @@ var blockUpload = {
 					img.onload = function() {
 						$('.block-result__original').css('height', img.height);
 						$('.block-result__original').css('width', img.width);
-					}
+					};
 				}
 			}
 		});
@@ -56,7 +56,7 @@ var blockUpload = {
 					img.onload = function () {
 						$('.block-result__watermark').css('height', img.height);
 						$('.block-result__watermark').css('width', img.width);
-					}
+					};
 					blockResult.dragWatermark();
 				}
 			}
