@@ -22,7 +22,7 @@ var blockUpload = {
 				var img = new Image();
 				img.src = 'files/' + (data.result.files[0].url);
 				console.log(data.result.files[0]);
-				if ((data.result.files[0].error)&&(data.result.files[0].error!=='Failed to resize image')) {
+				if ((data.result.files[0].error)&&!(data.result.files[0].error==='Failed to resize image (resize)')) {
 					console.log(data.result.files[0].error);
 					$('.block-upload__input-original-imitation').text('Ошибка').css('color', 'red');
 				} else {
@@ -46,7 +46,7 @@ var blockUpload = {
 				var img = new Image();
 				img.src = 'files/' + (data.result.files[0].url);
 				console.log(data.result.files[0]);
-				if ((data.result.files[0].error)&&(data.result.files[0].error!=='Failed to resize image')) {
+				if ((data.result.files[0].error)&&!(data.result.files[0].error==='Failed to resize image (resize)')) {
 					console.log(data.result.files[0].error);
 					$('.block-upload__input-watermark-imitation').text('Ошибка').css('color', 'red');
 				} else {
