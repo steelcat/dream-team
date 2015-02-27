@@ -5,10 +5,13 @@
   right: 25px;
   width: 651px;
   height: 534px;
+  line-height: 534px;
   background: #ffffff;
 }
 .block-result__container {
-  position: relative;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
 .block-result__watermark {
   position: absolute;

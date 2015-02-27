@@ -33,8 +33,12 @@ var blockUpload = {
 					img.onload = function() {
 						$('.block-result__original').css('left', 0);
 						$('.block-result__original').css('top', 0);
+						$('.block-result__watermark').css('left', 0);
+						$('.block-result__watermark').css('top', 0);
 						$('.block-result__original').css('height', img.height);
 						$('.block-result__original').css('width', img.width);
+						$('.block-result__container').css('height', img.height);
+						$('.block-result__container').css('width', img.width);
 					};
 				}
 			}
@@ -56,6 +60,8 @@ var blockUpload = {
 					$('.block-upload__input-watermark-imitation').text(data.files[0].name).css('color', '#9eb2c0'); // добавит название файла в блок имитирующий input
 					$('.block-result__watermark').html('<img id="watermark-image" class="block-result__watermark-image" src="files/' + (data.result.files[0].url) + '">');
 					img.onload = function () {
+						$('.block-result__original').css('left', 0);
+						$('.block-result__original').css('top', 0);
 						$('.block-result__watermark').css('left', 0);
 						$('.block-result__watermark').css('top', 0);
 						$('.block-result__watermark').css('height', img.height);
