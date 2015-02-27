@@ -1,5 +1,5 @@
 // Подключаем методы и прослушку для всех блоков
-(function () {
+$(document).ready(function() {
 	blockResult.dragWatermark(); // Инициализируем перетаскивание водяного знака
 	blockTransparency.makeSlider(); // Инициализируем слайдер прозрачности
 	blockPlace.init();
