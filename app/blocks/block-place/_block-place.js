@@ -91,5 +91,9 @@ var blockPlace = {
 		blockPlace.widthWatermark = $(".block-result__watermark-image").width();
 		blockPlace.maxHeight = blockPlace.heightOriginal - blockPlace.heightWatermark;
 		blockPlace.maxWidth = blockPlace.widthOriginal - blockPlace.widthWatermark;
+		if ((blockPlace.maxHeight<=0)||(blockPlace.maxWidth<=0)) {
+			blockPlace.maxHeight = 294;
+			blockPlace.maxWidth = 411;
+		}
 	}
 };
