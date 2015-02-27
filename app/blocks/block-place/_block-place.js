@@ -9,8 +9,6 @@ var blockPlace = {
 	init : function () {
 		blockPlace.getImageParam();//Получаем размеры картинки
 		blockPlace.getMaxMinPos();//Получаем лимиты для перемещения watermark`a
-		blockPlace.gridControl(); // Подключаем сетку в квадрате
-		blockPlace.listen(); //Слушаем события блока
 	},
 	listen: function(){
 		$( ".block-place__control__buttonset" ).on( "selectableselected", blockPlace.setGridPos);
