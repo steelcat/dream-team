@@ -6,8 +6,8 @@ var blockResult = {
 	},
 	setPos: function () {
 		var watermarkImage = document.getElementById('watermark-image-container'),
-			x = watermarkImage.offsetLeft,
-			y = watermarkImage.offsetTop;
+			x = watermarkImage.offsetTop,
+			y = watermarkImage.offsetLeft;
 		blocksLibrary.setValue(x,y);
 	}
 };
