@@ -46,29 +46,39 @@ var blockPlace = {
 		blocksLibrary.setValue(x,y);
 	},
 	setPos: function(event){
-		var xPosition = parseInt($(".block-result__watermark").css("left").replace("px",""));
-		var yPosition = parseInt($(".block-result__watermark").css("top").replace("px",""));
 		var _this = this;
-		console.log(xPosition);
 		blockPlace.timeout = setInterval(function() {
+			var xPosition = parseInt($(".block-result__watermark").css("left").replace("px",""));
+			var yPosition = parseInt($(".block-result__watermark").css("top").replace("px",""));
 			var xyButtons = $(_this).parent().attr('id');
 			var change = 0;
-			console.log(event.data.asx);
 			if (event.data.asx==='up') {
 				change = 1;
 			} else {
 				change = -1;
 			}
-			console.log(xyButtons);
 			if (xyButtons==='x-buttons') {
 				xPosition = xPosition + change;
 			}
 			if (xyButtons==='y-buttons') {
 				yPosition = yPosition + change;
 			}
-			console.log(xPosition);
-			if (xPosition>blockPlace.maxWidth) { xPosition = blockPlace.maxWidth};
-			if (yPosition>blockPlace.maxHeight) { yPosition = blockPlace.maxHeight};
+			if (xPosition<0) {
+				xPosition = 0;
+				blockPlace.setPosStop();
+			}
+			if (yPosition<0) {
+				yPosition = 0;
+				blockPlace.setPosStop();
+			}
+			if (xPosition>blockPlace.maxWidth) {
+				xPosition = blockPlace.maxWidth;
+				blockPlace.setPosStop();
+			}
+			if (yPosition>blockPlace.maxHeight) {
+				yPosition = blockPlace.maxHeight;
+				blockPlace.setPosStop();
+			}
 			$(".block-result__watermark").css("left", xPosition+"px");
 			$(".block-result__watermark").css("top", yPosition+"px");
 			blocksLibrary.setValue(xPosition,yPosition);
@@ -82,7 +92,9 @@ var blockPlace = {
 		blockPlace.height = $(".block-result__watermark-image").height();
 	},
 	getMaxMinPos: function(){
-		blockPlace.maxWidth = 651 - blockPlace.width;
-		blockPlace.maxHeight = 534 - blockPlace.height;
+		blockPlace.heightOriginal = $(".block-result__original-image").height();
+		blockPlace.widthOriginal = $(".block-result__original-image").width();
+		blockPlace.maxHeight = blockPlace.heightOriginal - blockPlace.height;
+		blockPlace.maxWidth = blockPlace.widthOriginal - blockPlace.width;
 	}
 };
