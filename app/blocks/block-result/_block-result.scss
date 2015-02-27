@@ -21,6 +21,9 @@
   opacity: 0.5;
   z-index: 20;
 }
+.block-result__watermark:hover, .block-result__watermark:focus {
+  cursor: pointer;
+}
 .block-result__watermark-image{
   position: absolute;
   display: block;
