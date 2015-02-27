@@ -3,27 +3,20 @@
 var blockPlace = {
 	// Инициализация
 	timeout: 0,
-	//TODO подумать, как менять при перезагрузке ватермарка
-	changed: true,//изначально false,а если загружен другой watermark -- true
-
 	width: 0,
 	height: 0,
 
 	init : function () {
-		console.log('Подключен контроль блока переключения положений.');
+		blockPlace.getImageParam();//Получаем размеры картинки
+		blockPlace.getMaxMinPos();//Получаем лимиты для перемещения watermark`a
 		blockPlace.gridControl(); // Подключаем сетку в квадрате
 		blockPlace.listen(); //Слушаем события блока
 	},
 	listen: function(){
-		console.log('Прослушка place__control__spinners запущена');
 		$( ".block-place__control__buttonset" ).on( "selectableselected", blockPlace.setGridPos);
 		$(".up-button").on('mousedown', { asx: "up" }, blockPlace.setPos);
 		$(".down-button").on('mousedown', { asx: "down" }, blockPlace.setPos);
 		$(document).on('mouseup', blockPlace.setPosStop);
-		if(blockPlace.changed){//проверка на новые картинки
-			blockPlace.getImageParam();//Получаем размеры картинки
-			blockPlace.getMaxMinPos();//Получаем лимиты для перемещения watermark`a
-		}
 	},
 	gridControl: function(event) {
 		$(".block-place__control__buttonset").selectable({
@@ -35,7 +28,6 @@ var blockPlace = {
 		});
 	},
 	setGridPos: function (event,ui) {
-		console.log('Выбран квадрат сетки положения = '+ ui.selected.id);
 		switch (ui.selected.id) {
 			case 'top-left': x = 0; y = 0; break;
 			case 'top': x = 0; y = Math.round(blockPlace.maxWidth/2); break;
@@ -54,24 +46,33 @@ var blockPlace = {
 		blocksLibrary.setValue(x,y);
 	},
 	setPos: function(event){
+		var xPosition = parseInt($(".block-result__watermark").css("left").replace("px",""));
+		var yPosition = parseInt($(".block-result__watermark").css("top").replace("px",""));
 		var _this = this;
-		blockPlace.timeout = setInterval(function(){
-			var patch = $(_this).parent().parent().find(".block-place__control__spinners-item-txt");
-			var value = patch.attr("value");
-			if(event.data.asx==='up'){value++;} else {value--;}
-			if(value<0){value = 0;}
-
-			var asix = patch.attr("name"); //Узнаем ось
-
-			if(asix === "y-value") {
-				if(value>blockPlace.maxHeight){value = blockPlace.maxHeight;}
-				$(".block-result__watermark").css("top", value + "px");
+		console.log(xPosition);
+		blockPlace.timeout = setInterval(function() {
+			var xyButtons = $(_this).parent().attr('id');
+			var change = 0;
+			console.log(event.data.asx);
+			if (event.data.asx==='up') {
+				change = 1;
 			} else {
-				if(value>blockPlace.maxWidth){value = blockPlace.maxWidth;}
-				$(".block-result__watermark").css("left", value + "px");
+				change = -1;
 			}
-			patch.attr("value",value);//Присваиваем значение в клетках
-		}, 10);//TODO уменьшить скорость смены позиции.
+			console.log(xyButtons);
+			if (xyButtons==='x-buttons') {
+				xPosition = xPosition + change;
+			}
+			if (xyButtons==='y-buttons') {
+				yPosition = yPosition + change;
+			}
+			console.log(xPosition);
+			if (xPosition>blockPlace.maxWidth) { xPosition = blockPlace.maxWidth};
+			if (yPosition>blockPlace.maxHeight) { yPosition = blockPlace.maxHeight};
+			$(".block-result__watermark").css("left", xPosition+"px");
+			$(".block-result__watermark").css("top", yPosition+"px");
+			blocksLibrary.setValue(xPosition,yPosition);
+		}, 50);
 	},
 	setPosStop: function(){
 		clearInterval(blockPlace.timeout);

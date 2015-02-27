@@ -17,12 +17,12 @@ mixin block-place
 				form.block-place__control__spinners-item
 					label(for="spinner-axis-x" class="axis-label") X
 					input(type="text" id="x-value" class="block-place__control__spinners-item-txt" name="x-value" value="0" maxlength="3" disabled)
-					div(class="block-place__control__spinners-item-buttons")
+					div(class="block-place__control__spinners-item-buttons" id="x-buttons")
 						.up-button
 						.down-button
 				form(class="block-place__control__spinners-item")
 					label(for="axis-x" class="axis-label") Y
 					input(type="text" id="y-value" class="block-place__control__spinners-item-txt" name="y-value" value="0" maxlength="3" disabled)
-					div(class="block-place__control__spinners-item-buttons")
+					div(class="block-place__control__spinners-item-buttons" id="y-buttons")
 						.up-button
 						.down-button
