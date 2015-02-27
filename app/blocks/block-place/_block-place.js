@@ -65,10 +65,10 @@ var blockPlace = {
 
 			if(asix === "y-value") {
 				if(value>blockPlace.maxHeight){value = blockPlace.maxHeight;}
-				$(".block-result__watermark-image").css("top", value + "px");
+				$(".block-result__watermark").css("top", value + "px");
 			} else {
 				if(value>blockPlace.maxWidth){value = blockPlace.maxWidth;}
-				$(".block-result__watermark-image").css("left", value + "px");
+				$(".block-result__watermark").css("left", value + "px");
 			}
 			patch.attr("value",value);//Присваиваем значение в клетках
 		}, 10);//TODO уменьшить скорость смены позиции.
