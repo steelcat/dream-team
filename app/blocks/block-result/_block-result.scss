@@ -1,4 +1,5 @@
 .block-result {
+  overflow: hidden;
   position: absolute;
   bottom: 26px;
   left: 25px;
@@ -22,7 +23,6 @@
   z-index: 20;
 }
 .block-result__watermark-image{
-  position: absolute;
   display: block;
 }
 .block-result__original {
