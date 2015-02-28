@@ -19,9 +19,10 @@ var blockDownload = {
 					opacity: opacity
 				}, //данные
 				success: function(){
-					console.log('all right');
+					console.log('файл создан');
 					//downloadFile('../files/result.jpg');
-					//location.replace('php/download.php');
+					location.replace('php/download.php');
+					console.log('файл отдан');
 				},
 				error: function(textStatus){
 					console.log(textStatus);
