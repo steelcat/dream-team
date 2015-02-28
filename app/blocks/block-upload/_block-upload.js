@@ -22,12 +22,13 @@ var blockUpload = {
 				var img = new Image();
 				img.src = 'files/' + (data.result.files[0].url);
 				console.log(data.result.files[0]);
-				if ((data.result.files[0].error)&&(data.result.files[0].error!=='Failed to resize image (resize)')) {
+				if ((data.result.files[0].error)) {
 					console.log(data.result.files[0].error);
 					$('.block-upload__input-original-imitation').text('Ошибка').css('color', 'red');
 				} else {
 					//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
 					$('.block-upload__input-original-imitation').text(data.files[0].name).css('color', '#9eb2c0'); // добавит название файла в блок, имитирующий input
+					$('.block-upload__input-watermark').css('visibility', 'visible');
 					$('.block-result__original').html('<img id="original-image" class="block-result__original-image" src="files/' + (data.result.files[0].url) + '">');
 					$('.block-result__original').css('background', 'none');
 					img.onload = function() {
@@ -60,6 +61,7 @@ var blockUpload = {
 				} else {
 					//TODO При большой длине названия файла оно может вылезти за пределы блока, сделать ограничение длины названия
 					$('.block-upload__input-watermark-imitation').text(data.files[0].name).css('color', '#9eb2c0'); // добавит название файла в блок, имитирующий input
+					$('.block-upload__input-watermark').css('visibility', 'hidden');
 					$('.block-result__watermark').html('<img id="watermark-image" class="block-result__watermark-image" src="files/' + (data.result.files[0].url) + '">');
 					img.onload = function () {
 						$('.block-result__original').css('left', 0);

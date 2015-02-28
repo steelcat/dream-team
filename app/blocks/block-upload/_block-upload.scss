@@ -45,6 +45,10 @@
   z-index: 30;
 }
 
+.block-upload__input-watermark {
+  visibility: hidden;
+}
+
 // Модальное окно ошибок
 .block-upload-size-error {
   overflow: hidden;
