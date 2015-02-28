@@ -19,7 +19,9 @@ var blockDownload = {
 					opacity: opacity
 				}, //данные
 				success: function(){
-					location.replace('php/download.php');
+					console.log('all right');
+					//downloadFile('../files/result.jpg');
+					//location.replace('php/download.php');
 				},
 				error: function(textStatus){
 					console.log(textStatus);
