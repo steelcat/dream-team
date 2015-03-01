@@ -60,6 +60,10 @@ var blockPlace = {
 			if (xyButtons==='y-buttons') {
 				yPosition = yPosition + change;
 			}
+			if (isNaN(xPosition)||isNaN(yPosition)) {
+				xPosition = 0;
+				yPosition = 0;
+			}
 			if (xPosition<0) {
 				xPosition = 0;
 				blockPlace.setPosStop();
